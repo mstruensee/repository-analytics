@@ -1,8 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
-import App from './App';
+import { ThemeProvider } from "@material-ui/core"
+import { ConnectedRouter } from "connected-react-router"
+import { SnackbarProvider } from "notistack"
+import React from "react"
+import ReactDom from "react-dom"
+import { Provider } from "react-redux"
+import { ApplicationComponent } from "./application/application.component"
+import {
+	history,
+	makeStore
+} from "./store"
+import { Theme } from "./theme/theme"
 
-ReactDOM.render(<App />, document.getElementById('rad'));
+const element = document.createElement("div")
+element.id = "ra"
+document.body.appendChild(element)
 
-serviceWorker.unregister();
+const store = makeStore()
+
+ReactDom.render(
+	<Provider store={ store }>
+		<ConnectedRouter history={ history }>
+			<ThemeProvider theme={ Theme }>
+				<SnackbarProvider
+					maxSnack={ 5 }
+					dense
+					anchorOrigin={ {
+						vertical: "bottom",
+						horizontal: "right",
+					} }
+				>
+					<ApplicationComponent />
+				</SnackbarProvider>
+			</ThemeProvider>
+		</ConnectedRouter>
+	</Provider>,
+	element,
+	() => console.log("render complete")
+)

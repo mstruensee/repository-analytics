@@ -20,14 +20,16 @@ export const RepositoryContentsTable = () => {
 			<Table>
 				<TableHead>
 					<TableRow>
+						<TableCell>&nbsp;</TableCell>
 						<TableCell>Name</TableCell>
 						<TableCell align={ "center" }>Size</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{
-						contents.map(row => (
+						contents.map((row, index) => (
 							<TableRow key={ row.filename }>
+								<TableCell align="center">{ index + 1 }</TableCell>
 								<TableCell
 									component={ "th" }
 									scope={ "row" }

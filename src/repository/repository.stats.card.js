@@ -15,7 +15,7 @@ export const RepositoryStatsCard = () => {
 		version,
 		label,
 		size,
-		contents,
+		contentsLength,
 	} = stats
 
 	return (
@@ -35,7 +35,7 @@ export const RepositoryStatsCard = () => {
 				/>
 				<ListItemText
 					primary={ "Total Files" }
-					secondary={ contents.length }
+					secondary={ contentsLength }
 				/>
 			</ListItem>
 		</List>

@@ -1,6 +1,7 @@
 import Grid from "@material-ui/core/Grid"
 import React from "react"
 import { RepositoryContentsTable } from "../repository/repository.contents.table"
+import { RepositoryContentsTableV2 } from "../repository/repository.contents.table.v2"
 import { RepositoryStatsCard } from "../repository/repository.stats.card"
 
 export const TarballStatsPage = () => {
@@ -19,7 +20,7 @@ export const TarballStatsPage = () => {
 				item
 				xs={ 12 }
 			>
-				<RepositoryContentsTable />
+				<RepositoryContentsTableV2 />
 			</Grid>
 		</Grid>
 	)

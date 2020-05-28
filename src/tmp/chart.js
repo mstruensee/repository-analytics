@@ -18,23 +18,6 @@ import {
 } from "recharts"
 import { Title } from "./title"
 
-// Generate Sales Data
-function createData(version, size) {
-	return { version, size }
-}
-
-const data = [
-	createData("20.02", 1),
-	createData("20.03", 2),
-	createData("20.04", 3),
-	createData("20.05", 4),
-	createData("20.06", 5),
-	createData("20.07", 6),
-	createData("20.08", 7),
-	createData("20.09", 8),
-	createData("20.10", 9),
-]
-
 const useStyles = makeStyles(theme => ({
 	paper: {
 		padding: theme.spacing(2),
